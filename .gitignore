@@ -1,1 +1,4 @@
 private.txt
+
+private/
+!private/.gitkeep
