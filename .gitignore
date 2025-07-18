@@ -1,4 +1,6 @@
+.env
 private.txt
 
 # n8n data directory
 n8n_data/
+
