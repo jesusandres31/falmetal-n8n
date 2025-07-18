@@ -1,4 +1,4 @@
 private.txt
 
-private/
-!private/.gitkeep
+# n8n data directory
+n8n_data/

@@ -14,3 +14,5 @@ services:
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
       - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - ./n8n_data:/home/node/.n8n
