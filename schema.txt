@@ -1,0 +1,27 @@
+Esquema de tablas (relación muchos a muchos) sin usar SQL
+________________________________________
+Tabla: Proveedores
+Campo	Tipo de dato	Restricción	Descripción
+id_proveedor	Número entero	Clave primaria	Identificador único de cada proveedor
+nombre_proveedor	Texto	Obligatorio	Nombre de la empresa o persona
+contacto	Texto	Opcional	Nombre de contacto o área
+telefono	Texto	Obligatorio	Número de WhatsApp
+email	Texto (email)	Opcional	Correo electrónico
+direccion	Texto	Opcional	Localidad o domicilio
+________________________________________
+Tabla: Insumos
+Campo	Tipo de dato	Restricción	Descripción
+id_insumo	Número entero	Clave primaria	Identificador único de cada insumo
+nombre_insumo	Texto	Obligatorio, único	Nombre descriptivo del material
+________________________________________
+Tabla intermedia: Proveedor_Insumo
+(modela la relación muchos a muchos)
+Campo	Tipo de dato	Restricción	Descripción
+id_proveedor	Número entero	Clave foránea → Proveedores.id_proveedor	Define qué proveedor ofrece el insumo
+id_insumo	Número entero	Clave foránea → Insumos.id_insumo	Define qué insumo es ofrecido por el proveedor
+(PK compuesta)	—	id_proveedor + id_insumo son clave primaria	Evita duplicados de la misma pareja proveedor insumo
+________________________________________
+Relaciones
+•	Un proveedor puede aparecer en muchas filas de Proveedor_Insumo, es decir, ofrecer múltiples insumos.
+•	Un insumo puede aparecer en muchas filas de Proveedor_Insumo, es decir, ser ofrecido por varios proveedores.
+
